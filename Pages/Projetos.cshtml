@@ -1,0 +1,73 @@
+﻿@page
+@model ProjetosModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Projetos";
+    var baseUrl = "/Projetos" + (string.IsNullOrEmpty(Model.SelectedTech) ? "" : ("?tech=" + Uri.EscapeDataString(Model.SelectedTech)));
+}
+<section class="projects-page">
+    <div class="container">
+        <h1>Projetos</h1>
+        <p class="lead muted">Filtre por tecnologia ou navegue entre as páginas.</p>
+
+        <div class="projects-controls">
+            <div class="filters" role="tablist" aria-label="Filtros por tecnologia">
+                <a class="filter @(string.IsNullOrEmpty(Model.SelectedTech) ? "active" : "")" href="/Projetos">Todos</a>
+                @foreach (var t in Model.Technologies)
+                {
+                    <a class="filter @(t == Model.SelectedTech ? "active" : "")" href="/Projetos?tech=@Uri.EscapeDataString(t)">@t</a>
+                }
+            </div>
+
+            <div class="pagination-summary">
+                Página @Model.Page de @Model.TotalPages
+            </div>
+        </div>
+
+        <div class="projects-grid">
+            @foreach (var p in Model.PagedProjects)
+            {
+                <article class="project-card">
+                    <img src="@p.Image" alt="@p.Title" class="project-thumb" />
+                    <div class="project-body">
+                        <h3>@p.Title</h3>
+                        <p>@p.Description</p>
+
+                        <ul class="project-tags">
+                            @foreach (var tag in p.Tech)
+                            {
+                                <li>@tag</li>
+                            }
+                        </ul>
+
+                        <div class="project-links">
+                            <a class="btn ghost" href="@p.DemoUrl" target="_blank" rel="noopener noreferrer">Demo</a>
+                            <a class="btn primary" href="@p.RepoUrl" target="_blank" rel="noopener noreferrer">Repositório</a>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+
+        <nav class="pagination" aria-label="Paginação">
+            @if (Model.Page > 1)
+            {
+                <a class="page-link" href="@(baseUrl + (baseUrl.Contains("?") ? "&" : "?") + "page=" + (Model.Page - 1))">← Anterior</a>
+            }
+            @for (var i = 1; i <= Model.TotalPages; i++)
+            {
+                <a class="page-number @(i == Model.Page ? "current" : "")" href="@(baseUrl + (baseUrl.Contains("?") ? "&" : "?") + "page=" + i)">@i</a>
+            }
+            @if (Model.Page < Model.TotalPages)
+            {
+                <a class="page-link" href="@(baseUrl + (baseUrl.Contains("?") ? "&" : "?") + "page=" + (Model.Page + 1))">Próxima →</a>
+            }
+        </nav>
+        <div style="margin-top:20px;">
+            <a class="btn ghost" href="/">← Voltar para Home</a>
+        </div>
+    </div>
+
+   
+
+</section>

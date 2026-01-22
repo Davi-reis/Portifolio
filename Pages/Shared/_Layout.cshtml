@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Portfólio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">Portfólio</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <!-- link para a rota /Projetos -->
+                <a href="/Projetos">Projetos</a>
+                <a href="/Contatos">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="site-main">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© @(DateTime.Now.Year) • Feito com .NET 10</p>
+        </div>
+    </footer>
+</body>
+</html>
