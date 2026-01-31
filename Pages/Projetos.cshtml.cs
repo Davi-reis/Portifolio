@@ -20,10 +20,17 @@ public class ProjetosModel : PageModel
 
     private List<Project> AllProjects = new List<Project>
     {
-        new Project { Title = "API Correios", Description = "Sistema de consulta de CEP integrado à API dos Correios, ideal para e-commerces e cadastros automatizados. Retorna endereço completo de forma rápida, segura e padronizada.", Image = "/imagens/APICorreios.png", DemoUrl = "https://apicorreios.azurewebsites.net/", RepoUrl = "https://github.com/Davi-reis/APICorreios", Tech = new List<string>{" ASP.NET CORE","C#","HTML","CSS","JavaScript"} },
-        //new Project { Title = "Dashboard Admin", Description = "SPA com React, gráficos e otimizações de performance.", Image = "/imagens/projects/project2.jpg", DemoUrl = "#", RepoUrl = "#", Tech = new List<string>{"React",".NET","SignalR"} },
+        new Project { Title = "API Correios", Description = "Sistema de consulta de CEP integrado à API dos Correios, ideal para e-commerces e cadastros automatizados. Retorna endereço completo de forma rápida, segura e padronizada.", Image = "/imagens/APICorreios.png", DemoUrl = "https://apicorreios.azurewebsites.net/", RepoUrl = "#", Tech = new List<string>{" ASP.NET CORE","C#","HTML","CSS","JavaScript"} },
+new Project {
+    Title = "Site Institucional para Escritório de Arquitetura",
+    Description = "Website profissional desenvolvido para apresentar projetos arquitetônicos, fortalecer a presença online e facilitar o contato com novos clientes. Layout moderno, responsivo e focado em conversão.",
+    Image = "/Imagens/Arquitetura.png",
+    DemoUrl = "https://arquiteto.azurewebsites.net/",
+    RepoUrl = "#",
+    Tech = new List<string>{ "Website Responsivo", "Layout Profissional", "Formulário de Contato", "Hospedagem Azure" }
+},
         //new Project { Title = "Microserviço Billing", Description = "Microserviço com Kafka e observabilidade.", Image = "/imagens/projects/project3.jpg", DemoUrl = "#", RepoUrl = "#", Tech = new List<string>{"Microservices","Kafka",".NET"} },
-        new Project { Title = "Site para Studio de Beleza", Description = "Desenvolvi um sistema web para estúdios de beleza focado em atrair clientes, \r\n                apresentar serviços de forma profissional e facilitar o contato. \r\n                A solução é rápida, responsiva e pode ser adaptada para diferentes tipos de negócio, \r\n                de acordo com a necessidade do cliente.", Image = "/imagens/studiothamy.png", DemoUrl = "https://studiothamy-dhf4dgaggyceb9ap.brazilsouth-01.azurewebsites.net/", RepoUrl = "https://github.com/Davi-reis/Portifolio", Tech = new List<string>{"ASP.NET Core","Razor Pages","C#","HTML","CSS","Bootstrap","JavaScript"} },
+        new Project { Title = "Site para Studio de Beleza", Description = "Desenvolvi um sistema web para estúdios de beleza focado em atrair clientes, \r\n                apresentar serviços de forma profissional e facilitar o contato. \r\n                A solução é rápida, responsiva e pode ser adaptada para diferentes tipos de negócio, \r\n                de acordo com a necessidade do cliente.", Image = "/imagens/studiothamy.png", DemoUrl = "https://studiothamy-dhf4dgaggyceb9ap.brazilsouth-01.azurewebsites.net/", RepoUrl = "#", Tech = new List<string>{"ASP.NET Core","Razor Pages","C#","HTML","CSS","Bootstrap","JavaScript"} },
         //new Project { Title = "Integração OAuth", Description = "Fluxo OAuth com provedores externos.", Image = "/imagens/projects/project5.jpg", DemoUrl = "#", RepoUrl = "#", Tech = new List<string>{"OAuth",".NET","OpenID"} },
         //new Project { Title = "App Mobile (PWA)", Description = "PWA com caching e notificações.", Image = "/imagens/projects/project6.jpg", DemoUrl = "#", RepoUrl = "#", Tech = new List<string>{"PWA","React","Service Worker"} },
         //new Project { Title = "Automação CI/CD", Description = "Pipelines com testes e deploy automatizado.", Image = "/imagens/projects/project7.jpg", DemoUrl = "#", RepoUrl = "#", Tech = new List<string>{"CI/CD","Azure DevOps","Docker"} },
